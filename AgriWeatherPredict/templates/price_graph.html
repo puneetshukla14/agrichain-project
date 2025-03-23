@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Crop Price Prediction Graph</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+  <h1>📈 Crop Price Prediction Graph</h1>
+
+  <!-- ✅ Chart Canvas -->
+  <canvas id="priceChart" width="800" height="400"></canvas>
+
+  <br><br>
+  <a href="/" style="padding:10px 20px; background-color:#4CAF50; color:#fff; text-decoration:none;">🔙 Back to Home</a>
+
+  <script>
+    // ✅ Fetch data from Flask API
+    fetch('/api/price-history')
+      .then(response => response.json())
+      .then(result => {
+        const data = result.data;
+        const dates = data.map(item => item.date);
+        const prices = data.map(item => item.price);
+
+        // ✅ Chart.js Line Chart
+        const ctx = document.getElementById('priceChart').getContext('2d');
+        new Chart(ctx, {
+          type: 'line',
+          data: {
+            labels: dates,
+            datasets: [{
+              label: 'Crop Price (₹)',
+              data: prices,
+              backgroundColor: 'rgba(75,192,192,0.2)',
+              borderColor: '#4CAF50',
+              borderWidth: 2,
+              fill: true,
+              tension: 0.4,
+              pointBackgroundColor: '#4CAF50'
+            }]
+          },
+          options: {
+            responsive: true,
+            plugins: {
+              legend: { display: true, position: 'top' }
+            },
+            scales: {
+              y: { title: { display: true, text: 'Price ₹' } },
+              x: { title: { display: true, text: 'Date' } }
+            }
+          }
+        });
+      })
+      .catch(error => console.error('Error fetching data:', error));
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AgriChain Platform</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+  <style>
+    /* ✅ Basic Styling */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fff;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #4CAF50;
+      color: #fff;
+      padding: 20px;
+    }
+
+    nav a,
+    nav button {
+      color: #4CAF50;
+      background-color: #fff;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-weight: bold;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    nav {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .landing-container {
+      text-align: center;
+      padding: 30px;
+    }
+
+    .about-section {
+      max-width: 1350px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      padding: 30px 0;
+    }
+
+    .about-box {
+      background-color: #f9f9f9;
+      border-radius: 10px;
+      padding: 25px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      opacity: 0;
+      transform: scale(0.8);
+      animation: fadeInZoom 1s forwards;
+    }
+
+    /* ✅ Animation Keyframes */
+    @keyframes fadeInZoom {
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    /* ✅ Staggered delay for smooth feel */
+    .about-box:nth-child(1) {
+      animation-delay: 2.5s;
+    }
+
+    .about-box:nth-child(2) {
+      animation-delay: 3.0s;
+    }
+
+    .about-box:nth-child(3) {
+      animation-delay: 3.5s;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #4CAF50;
+      color: #fff;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ✅ Header -->
+  <header>
+    <img src="{{ url_for('static', filename='logo.png') }}" alt="AgriChain Logo" style="height: 60px;">
+    <nav>
+      <a href="/">Home</a>
+      <a href="/crop">Crop Suggestion</a>
+      <button onclick="window.location.href='/price-graph'">View Price Graph</button>
+      <button onclick="window.location.href='/live-tracking'">Live Cargo Tracking</button>
+    </nav>
+  </header>
+
+  <!-- ✅ Landing Image -->
+  <div class="landing-container">
+    <img src="https://agrichain.com/wp-content/uploads/2020/02/device_mock-up_2.png" alt="AgriChain Showcase"
+      style="max-width: 80%; height: auto;">
+    <h2>Your Complete Agri Solution Platform</h2>
+  </div>
+
+  <!-- ✅ About Section with Animation -->
+  <div class="about-section">
+    <div class="about-box">
+      <h2>Your Complete Agri Solution Platform</h2>
+      <h3>What is AgriChain?</h3>
+      <p>AgriChain supports traditional agricultural supply chains with dynamic, seamless management software.
+        Our platform connects and transfers information between supply chain participants securely.
+      </p>
+      <p>AgriChain helps businesses manage agricultural products globally, build networks, reduce costs, and increase
+        market efficiency.</p>
+    </div>
+
+    <div class="about-box">
+      <h3>Connecting the Supply Chain</h3>
+      <p>Mobile software for farming, logistics, and receival sites combined with a powerful web app gives complete
+        visibility from paddock to end user.</p>
+
+      <h3>Product History</h3>
+      <p>4 years of development, trusted by farmers, mills, feedlots, and manufacturers across Australia & Asia. Now
+        loaded with powerful new features!</p>
+    </div>
+
+    <div class="about-box">
+      <h3>We Empower:</h3>
+      <p>✅ Growers</p>
+      <p>✅ Brokers</p>
+      <p>✅ Logistics Providers</p>
+      <p>✅ Receival Sites</p>
+
+      <h3>Contact Us</h3>
+      <p>Have questions or feedback? We’d love to hear from you!</p>
+      <p><strong>Email:</strong> info@agrichain.com</p>
+    </div>
+  </div>
+
+  <!-- ✅ Footer -->
+  <footer>
+    © 2025 AgriChain. All rights reserved.
+  </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AgriChain Presentation</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='agrichain.css') }}">
+</head>
+
+<body>
+  <!-- Logo -->
+  <header class="header">
+    <img src="{{ url_for('static', filename='logo.png') }}" alt="AgriChain Logo">
+  </header>
+
+  <!-- Curved Animated Container -->
+  <section class="presentation-container">
+    <div class="content">
+      <h1>AgriChain</h1>
+      <p>
+        AgriChain streamlines the entire agricultural supply chain — from growers to exporters. The platform manages inventory, contracts, and real-time cargo movements. It automates container packing, export documentation, digital invoicing, and warehouse automation.
+      </p>
+
+      <ul>
+        <li><strong>Inventory & Contract Management:</strong> Real-time stock, grade, and ownership tracking.</li>
+        <li><strong>Order & Cargo Tracking:</strong> Live tracking of trucks and loads.</li>
+        <li><strong>Container Packing & Export Management:</strong> Automated schedules and document compliance.</li>
+        <li><strong>Digital Invoicing & Declarations:</strong> Auto-generated invoices and declarations.</li>
+        <li><strong>Warehouse & Site Management:</strong> Real-time stock & cost insights.</li>
+        <li><strong>ERP & System Integration:</strong> SAP, Microsoft Dynamics, Impexdocs compatible.</li>
+      </ul>
+
+      <h3>Tech Stack Highlights:</h3>
+      <p>
+        Node.js | Java Spring Boot | React.js | IoT | Google Maps | RabbitMQ | SAP | AWS | Docker | Kubernetes
+      </p>
+    </div>
+
+    <div class="image-container">
+      <img src="{{ url_for('static', filename='agrichain.jpg') }}" alt="AgriChain Platform">
+    </div>
+  </section>
+</body>
+
+</html>

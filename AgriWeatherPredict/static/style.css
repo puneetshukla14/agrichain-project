@@ -1,0 +1,135 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    background-color: #f0f4f3;
+}
+
+/* Topbar Styling */
+.topbar {
+    background: url('{{ url_for('static', filename='topbar-bg.jpg') }}') no-repeat center center/cover;
+    padding: 25px 50px;
+    background-color: #1f4632;
+}
+
+.topbar-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.topbar .logo {
+    width: 170px;
+    height: auto;
+}
+
+.nav-links a {
+    background-color: #fff;
+    color: #1f4632;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: 600;
+    font-size: 17px;
+    padding: 10px 20px;
+    border-radius: 6px;
+    border: 2px solid #1f4632;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-links a:hover {
+    background-color: #d9f2e6;
+    color: #1f4632;
+}
+
+/* Landing Section */
+.landing {
+    text-align: center;
+    padding: 100px 20px;
+    background: linear-gradient(rgba(31, 70, 50, 0.7), rgba(31, 70, 50, 0.7)),
+                url('{{ url_for('static', filename='background.jpg') }}') no-repeat center center/cover;
+    color: #fff;
+}
+
+.landing-content h1 {
+    font-size: 50px;
+    margin-bottom: 20px;
+    color: #fff;
+    opacity: 1;
+}
+
+.landing-content h1 span {
+    color: #aadfbc;
+}
+
+.landing-content p {
+    font-size: 22px;
+    margin-bottom: 40px;
+    color: #fff;
+    opacity: 1;
+}
+
+.btn {
+    background-color: #1f4632;
+    color: #fff;
+    padding: 14px 28px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 18px;
+    margin: 10px;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #173525;
+}
+
+.white-btn {
+    background-color: #fff;
+    color: #1f4632;
+    border: 2px solid #1f4632;
+}
+
+.white-btn:hover {
+    background-color: #d9f2e6;
+    color: #1f4632;
+}
+
+/* Footer */
+footer {
+    background-color: #1f4632;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 16px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .topbar-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav-links {
+        margin-top: 20px;
+    }
+
+    .nav-links a {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .landing-content h1 {
+        font-size: 36px;
+    }
+
+    .landing-content p {
+        font-size: 18px;
+    }
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🌾 AgriChain - Weather Based Crop Suggestion</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <!-- Topbar -->
+  <div class="topbar">
+    <div class="topbar-content">
+      <img src="{{ url_for('static', filename='logo.png') }}" alt="AgriChain Logo" class="logo">
+      <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/crop">🌱 Crop Suggestion</a>
+        <a href="/price-graph">📈 Price Graph</a>
+        <a href="/live-tracking">🚚 Live Tracking</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Landing Section -->
+  <section class="landing">
+    <div class="landing-content">
+      <h1>Empowering <span>Farmers</span> with Technology 🌾</h1>
+      <p>Get AI-driven crop suggestions based on real-time weather data.<br>
+        Explore price trends and track your cargo live.</p>
+      <a href="/crop" class="btn">Get Crop Suggestion</a>
+      <a href="/price-graph" class="white-btn">View Price Graph</a>
+      <a href="/live-tracking" class="white-btn">Live Cargo Tracking</a>
+    </div>
+  </section>
+
+  <!-- Image Section -->
+  <section class="image-section">
+    <img src="{{ url_for('static', filename='farmers.jpg') }}" alt="Farmers Image">
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    © 2025 AgriChain. All rights reserved.
+  </footer>
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🌾 AgriChain - Crop Suggestion</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='crop.css') }}">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- Top Bar / Header -->
+  <header class="topbar">
+    <div class="topbar-content">
+      <img src="{{ url_for('static', filename='logo.png') }}" alt="AgriChain Logo" class="logo">
+      <nav class="nav-links" aria-label="Primary Navigation">
+        <a href="/">Home</a>
+        <a href="/crop">🌱 Crop Suggestion</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Split Background Section -->
+  <div class="split-section">
+
+    <!-- Left Side - Content -->
+    <section class="landing">
+      <div class="landing-content">
+        <h1>Weather-Based <span>Crop Suggestion</span></h1>
+        <p>Get the best crop suggestion based on your city’s weather conditions.</p>
+      </div>
+    </section>
+
+    <!-- Right Side - Form -->
+    <section class="form-section">
+      <div class="container">
+        <form action="/suggest" method="post">
+          <label for="city">Enter City:</label>
+          <input type="text" id="city" name="city" placeholder="Enter City (e.g., Delhi, Mumbai)" required>
+          <button type="submit">Suggest Crop</button>
+        </form>
+
+        {% if suggestion %}
+        <div class="result">
+          <h2>{{ suggestion }}</h2>
+        </div>
+        {% endif %}
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    © 2025 AgriChain. All rights reserved.
+  </footer>
+
+</body>
+</html>
